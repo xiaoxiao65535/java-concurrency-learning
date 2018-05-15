@@ -14,7 +14,7 @@ import java.util.concurrent.*;
  */
 @Slf4j
 @NotThreadSafe
-public class ConcurrencyTest {
+public class ConcurrencyExample {
 
     // 并发数
     public static int clientTotal = 5000;
