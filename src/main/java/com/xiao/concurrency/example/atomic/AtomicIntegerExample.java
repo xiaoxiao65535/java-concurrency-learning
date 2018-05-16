@@ -1,6 +1,5 @@
-package com.xiao.concurrency.example.count;
+package com.xiao.concurrency.example.atomic;
 
-import com.xiao.concurrency.annotations.NotThreadSafe;
 import com.xiao.concurrency.annotations.ThreadSafe;
 import lombok.extern.slf4j.Slf4j;
 
