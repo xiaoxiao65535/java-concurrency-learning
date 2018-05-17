@@ -16,19 +16,19 @@ import java.io.IOException;
 public class HttpFilter implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
-
+        log.info("\nHttpFilter init");
     }
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         HttpServletRequest request = (HttpServletRequest) servletRequest;
-        log.info("线程id： {} ，请求： {}", Thread.currentThread().getId(), request.getRequestURL());
+        log.info("HttpFilter doFilter 线程id： {} ，请求： {}", Thread.currentThread().getId(), request.getRequestURI());
         RequestThreadLocal.set(request);
         filterChain.doFilter(servletRequest, servletResponse);
     }
 
     @Override
     public void destroy() {
-
+        log.info("HttpFilter destroy 线程id： {} ，请求： {}", Thread.currentThread().getId(), RequestThreadLocal.get().getRequestURI());
     }
 }

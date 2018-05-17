@@ -17,9 +17,7 @@ public class ThreadLocalController {
 
     @GetMapping("/thread/get")
     public void get() {
-        log.info("线程id： {} ，请求： {}",
-                Thread.currentThread().getId(),
-                RequestThreadLocal.get().getRequestURI());
+        log.info("ThreadLocalController 线程id： {} ，请求： {}", Thread.currentThread().getId(), RequestThreadLocal.get().getRequestURI());
     }
 
 }

@@ -93,4 +93,10 @@ Java并发编程实践
 
     堆栈封闭：局部变量，无并发问题
     ThreadLocal线程封闭：特别好的线程封闭方式
+    
+### StringBuffer和StringBuilder
+
+    StringBuffer的方法都加上了synchronized，所以是线程安全的
+    StringBuilder线程不安全，如果StringBuilder是定义在方法内部，属于堆栈封闭，此时应该选择StringBuilder提升性能
+    
 
