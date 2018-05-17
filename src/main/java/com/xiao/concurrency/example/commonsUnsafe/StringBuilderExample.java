@@ -1,7 +1,6 @@
-package com.xiao.concurrency.example.unsafe;
+package com.xiao.concurrency.example.commonsUnsafe;
 
 import com.xiao.concurrency.annotations.NotThreadSafe;
-import com.xiao.concurrency.annotations.ThreadSafe;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.concurrent.CountDownLatch;
@@ -10,19 +9,22 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Semaphore;
 
 /**
+ * 〈并发测试〉<br>
+ *
  * @author jianjun.xiao
- * @create 2018/5/17 15:17
+ * @create 2018/5/15 16:08
+ * @since 1.0.0
  */
 @Slf4j
-@ThreadSafe
-public class StringBufferExample {
+@NotThreadSafe
+public class StringBuilderExample {
 
     // 并发数
     public static int clientTotal = 5000;
     // 线程数
     public static int threadTatal = 200;
 
-    public static StringBuffer sb = new StringBuffer();
+    public static StringBuilder sb = new StringBuilder();
 
     @NotThreadSafe
     public static void update() {
@@ -53,5 +55,5 @@ public class StringBufferExample {
         executorService.shutdown();
         log.debug("count:{}", sb.length());
     }
-
 }
+

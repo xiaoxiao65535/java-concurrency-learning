@@ -91,7 +91,7 @@ Java并发编程实践
 
 ### 线程封闭（避免并发下 线程安全）
 
-    堆栈封闭：局部变量，无并发问题
+    堆栈封闭：局部变量，无并发问题（即将变量声明为局部变量，不存在线程安全问题）
     ThreadLocal线程封闭：特别好的线程封闭方式
     
 ### StringBuffer和StringBuilder
@@ -99,4 +99,13 @@ Java并发编程实践
     StringBuffer的方法都加上了synchronized，所以是线程安全的
     StringBuilder线程不安全，如果StringBuilder是定义在方法内部，属于堆栈封闭，此时应该选择StringBuilder提升性能
     
+### 常见线程不安全类
 
+    SimpleDateFormat
+    容器：ArrayList，HashMap，HashSet
+    
+### 线程安全-同步容器
+
+    ArrayList->Vector,Stack
+    HashMap->HashTable(key 和 value 不能为空)
+    Collections.synchroizedXXX()
