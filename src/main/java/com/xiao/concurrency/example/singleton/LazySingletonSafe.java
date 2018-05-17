@@ -29,7 +29,7 @@ public class LazySingletonSafe {
 
     public static synchronized LazySingletonSafe getInstance() {
         if (instance == null) {
-            // 多线程下有线程问题
+            // 多线程下有性能问题
             instance = new LazySingletonSafe();
         }
         return instance;
